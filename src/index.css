@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400&display=swap');
+
+:root {
+  --space-dark: #0b0c10;
+  --nebula-purple: #1f1235;
+  --mystic-gold: #d4af37;
+  --gold-glow: rgba(212, 175, 55, 0.4);
+  --starlight-white: #e0e2e8;
+  
+  --font-serif: 'Cinzel', serif;
+  --font-sans: 'Lato', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at center, var(--nebula-purple) 0%, var(--space-dark) 100%);
+  color: var(--starlight-white);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+}
+
+input, select {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--mystic-gold);
+  color: var(--starlight-white);
+  font-family: var(--font-sans);
+  padding: 12px;
+  border-radius: 4px;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+input:focus, select:focus {
+  box-shadow: 0 0 10px var(--gold-glow);
+}

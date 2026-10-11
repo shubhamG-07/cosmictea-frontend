@@ -1,0 +1,32 @@
+.loaderContainer {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.backgroundVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: -1;
+  opacity: 0.6; /* Keeps the text legible */
+  mix-blend-mode: screen;
+}
+
+.loadingText {
+  font-family: var(--font-serif);
+  color: var(--mystic-gold);
+  font-size: 2rem;
+  text-shadow: 0 0 15px var(--gold-glow), 0 0 30px #000;
+  z-index: 1;
+}

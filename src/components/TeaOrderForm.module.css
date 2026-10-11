@@ -1,0 +1,103 @@
+.formContainer {
+  background: rgba(31, 18, 53, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--mystic-gold);
+  border-radius: 12px;
+  padding: 40px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 0 15px var(--gold-glow);
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-serif);
+  color: var(--mystic-gold);
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+  text-shadow: 0 0 10px var(--gold-glow);
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  color: var(--starlight-white);
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.timeGroup {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.timeGroup select {
+  flex: 1;
+  text-align: center;
+}
+
+.inputField {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  color: var(--starlight-white);
+  padding: 12px 15px;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  appearance: none; /* Removes default browser styling on selects */
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: var(--mystic-gold);
+  box-shadow: 0 0 12px var(--gold-glow);
+}
+
+/* Enhanced Button Styles */
+.submitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(270deg, #d4af37, #f3e5ab, #aa8529, #d4af37);
+  background-size: 300% 300%;
+  color: #0b0c10;
+  border: none;
+  padding: 15px 30px;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 0 15px var(--gold-glow);
+  transition: transform 0.2s ease;
+  animation: goldShimmer 4s ease infinite, buttonPulse 2s infinite;
+}
+
+.submitBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
+  animation: goldShimmer 2s ease infinite; /* Speeds up shimmer on hover */
+}
+
+/* Animations */
+@keyframes goldShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes buttonPulse {
+  0% { box-shadow: 0 0 15px var(--gold-glow); }
+  50% { box-shadow: 0 0 25px rgba(212, 175, 55, 0.6); }
+  100% { box-shadow: 0 0 15px var(--gold-glow); }
+}
