@@ -7,6 +7,7 @@
   max-width: 900px;
   width: 100%;
   z-index: 10;
+  box-sizing: border-box; /* Prevents padding from breaking width: 100% */
 }
 
 .header {
@@ -20,9 +21,11 @@
 
 .cardGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  /* Reduced from 350px to 280px to safely fit smaller tablets/large phones before breaking */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .card {
@@ -32,6 +35,8 @@
   border-radius: 8px;
   padding: 25px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), inset 0 0 10px var(--gold-glow);
+  box-sizing: border-box;
+  word-break: break-word; /* Prevents long text from pushing outside the card */
 }
 
 .cardTitle {
@@ -70,4 +75,39 @@
 .resetBtn:hover {
   background: rgba(212, 175, 55, 0.1);
   box-shadow: 0 0 15px var(--gold-glow);
+}
+
+/* --- MOBILE SPECIFIC FIXES --- */
+@media (max-width: 600px) {
+  .spillContainer {
+    padding: 20px 15px 60px 15px; /* Reduced side padding, added bottom padding for mobile browser navbars */
+    gap: 15px;
+  }
+
+  .header {
+    font-size: 2rem; /* Scaled down for mobile */
+    margin-bottom: 10px;
+  }
+
+  .cardGrid {
+    grid-template-columns: 1fr; /* Forces a perfect single-column vertical stack on phones */
+    gap: 15px;
+  }
+
+  .card {
+    padding: 15px; /* Tighter padding to maximize text space on small screens */
+  }
+
+  .cardTitle {
+    font-size: 1.3rem;
+  }
+
+  .cardText {
+    font-size: 1rem;
+  }
+
+  .resetBtn {
+    width: 100%; /* Makes the button easy to tap on mobile */
+    max-width: 300px;
+  }
 }

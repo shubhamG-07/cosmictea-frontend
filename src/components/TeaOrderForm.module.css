@@ -101,3 +101,32 @@
   50% { box-shadow: 0 0 25px rgba(212, 175, 55, 0.6); }
   100% { box-shadow: 0 0 15px var(--gold-glow); }
 }
+
+
+@media (max-width: 600px) {
+  .formContainer {
+    width: 90%;
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  .inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Make sure the time inputs don't overflow */
+  .timeGroup {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 5px;
+  }
+  
+  .timeGroup select, 
+  .timeGroup input[name="minute"] {
+    padding: 8px 4px; /* Slightly smaller padding for mobile */
+    font-size: 14px;
+  }
+}
